@@ -1,20 +1,28 @@
-import { useState } from 'react';
+import { Route, Routes } from 'react-router';
+
+import HomeLayout from './layouts/HomeLayout';
+import MainLayout from './layouts/MainLayout';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Quiz from './pages/Quiz';
+import { routes } from './routes';
 
 import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card"></div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <h1 className="text-4xl font-bold underline"> Hello world! </h1>
-    </>
+    <Routes>
+      <Route path={routes.home} element={<HomeLayout />}>
+        <Route index element={<Home />} />
+      </Route>
+
+      <Route path={routes.quiz} element={<MainLayout />}>
+        <Route index element={<Quiz />} />
+      </Route>
+
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
-}
+};
 
 export default App;
