@@ -1,22 +1,22 @@
 import { Outlet } from 'react-router';
 
+import Logo from '../components/Logo';
+
+import PageTransition from './PageTransition';
+
 const MainLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <header className="flex items-center justify-between p-4 bg-gray-800 text-white">
-        <div className="flex items-center space-x-2">
-          <img src="/path-to-your-logo.png" alt="Logo" className="h-8 w-auto" />
-        </div>
-      </header>
+    <PageTransition>
+      <div className="min-h-screen flex flex-col">
+        <header>
+          <Logo size="small" />
+        </header>
 
-      <main className="flex-1 p-4">
-        <Outlet />
-      </main>
-
-      <footer className="bg-gray-800 text-white p-4" role="contentinfo">
-        <p>© 2025 Petfinder</p>
-      </footer>
-    </div>
+        <main className="flex flex-1 h-screen">
+          <Outlet />
+        </main>
+      </div>
+    </PageTransition>
   );
 };
 

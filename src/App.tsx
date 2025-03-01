@@ -1,27 +1,37 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes, useLocation } from 'react-router';
+import { AnimatePresence } from 'framer-motion';
 
 import HomeLayout from './layouts/HomeLayout';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
+import Pets from './pages/Pets';
 import Quiz from './pages/Quiz';
 import { routes } from './routes';
 
-import './App.css';
+import './styles/App.css';
 
 const App = () => {
+  let location = useLocation();
+
   return (
-    <Routes>
-      <Route path={routes.home} element={<HomeLayout />}>
-        <Route index element={<Home />} />
-      </Route>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path={routes.home} element={<HomeLayout />}>
+          <Route index element={<Home />} />
+        </Route>
 
-      <Route path={routes.quiz} element={<MainLayout />}>
-        <Route index element={<Quiz />} />
-      </Route>
+        <Route path={routes.quiz} element={<MainLayout />}>
+          <Route index element={<Quiz />} />
+        </Route>
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path={routes.pets} element={<MainLayout />}>
+          <Route index element={<Pets />} />
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
   );
 };
 

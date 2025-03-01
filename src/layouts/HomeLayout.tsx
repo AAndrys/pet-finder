@@ -1,10 +1,14 @@
 import { Outlet } from 'react-router';
 
+import PageTransition from './PageTransition';
+
 const HomeLayout = () => {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <PageTransition>
+      <main>
+        <Outlet />
+      </main>
+    </PageTransition>
   );
 };
 

@@ -1,11 +1,11 @@
 export type Routes = {
   home: string;
   quiz: string;
-  petsList: string;
+  pets: string;
 };
 
 export const routes: Routes = {
   home: '/',
   quiz: '/quiz',
-  petsList: '/animals-list',
+  pets: '/pets',
 };
