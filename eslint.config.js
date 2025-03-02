@@ -43,7 +43,6 @@ export default tseslint.config({
       'warn',
       { allowConstantExport: true },
     ],
-    indent: ['error', 2],
     'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',

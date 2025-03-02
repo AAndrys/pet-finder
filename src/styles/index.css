@@ -7,10 +7,9 @@
   --color-primary: #ddefff;
   --color-secondary: #9c27b0;
   --color-active: #771d87;
+  --color-checkbox-bg: #41414134;
 }
 
-@layer base {
-  :root {
-    background-color: theme('colors.primary');
-  }
+:root {
+  background-color: theme('colors.primary');
 }
