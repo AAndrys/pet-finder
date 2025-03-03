@@ -1,17 +1,45 @@
-import { useState } from 'react';
-import './App.css';
+import { Route, Routes, useLocation } from 'react-router';
+import { AnimatePresence } from 'framer-motion';
 
-function App() {
-  const [count, setCount] = useState(0);
+import Favourites from './components/Favourites';
+import HomeLayout from './layouts/HomeLayout';
+import MainLayout from './layouts/MainLayout';
+import Home from './pages/Home';
+import Match from './pages/Match';
+import NotFound from './pages/NotFound';
+import Pets from './pages/Pets';
+import Quiz from './pages/Quiz';
+import { routes } from './routes';
+
+import './styles/App.css';
+
+const App = () => {
+  let location = useLocation();
 
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className='card'></div>
-      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-      <h1 className='text-4xl font-bold underline'> Hello world! </h1>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path={routes.home} element={<HomeLayout />}>
+            <Route index element={<Home />} />
+          </Route>
+
+          <Route path={routes.quiz} element={<MainLayout />}>
+            <Route index element={<Quiz />} />
+            <Route path="match" element={<Match />} />
+          </Route>
+
+          <Route path={routes.pets} element={<MainLayout />}>
+            <Route index element={<Pets />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AnimatePresence>
+
+      <Favourites />
     </>
   );
-}
+};
 
 export default App;
