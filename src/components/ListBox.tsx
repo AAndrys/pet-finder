@@ -26,7 +26,7 @@ const Listbox: FC<ListboxProps> = ({ options = [], onClick }) => {
   };
 
   return (
-    <div className="mx-auto w-full relative mt-4">
+    <div className="mx-auto w-full relative mt-4 z-1">
       <HeadlessListbox value={value} onChange={handleChange}>
         <ListboxButton
           className={clsx(

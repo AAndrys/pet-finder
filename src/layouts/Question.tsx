@@ -40,7 +40,7 @@ const Question: FC<QuestionProps> = ({
   const handleClickNext = () => {
     if (selectedOptions.length === 0) return;
 
-    onNext({ question, selectedAnswers: selectedOptions.map((o) => o.name) });
+    onNext({ question, selectedAnswers: selectedOptions.map((o) => o.value) });
 
     setSelectedOptions([]);
   };
@@ -84,7 +84,7 @@ const Question: FC<QuestionProps> = ({
         return (
           <Listbox
             options={options}
-            onClick={(name) => toggleOption({ name })}
+            onClick={(name) => toggleOption({ name, value: name })}
           />
         );
       default:
@@ -99,7 +99,7 @@ const Question: FC<QuestionProps> = ({
       <Button
         className="mt-[34px] m-auto"
         onClick={handleClickNext}
-        disabled={!selectedOptions}
+        disabled={!selectedOptions.length}
       >
         NEXT {'->'}
       </Button>

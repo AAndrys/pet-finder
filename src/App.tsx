@@ -5,6 +5,7 @@ import Favourites from './components/Favourites';
 import HomeLayout from './layouts/HomeLayout';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home';
+import Match from './pages/Match';
 import NotFound from './pages/NotFound';
 import Pets from './pages/Pets';
 import Quiz from './pages/Quiz';
@@ -25,6 +26,7 @@ const App = () => {
 
           <Route path={routes.quiz} element={<MainLayout />}>
             <Route index element={<Quiz />} />
+            <Route path="match" element={<Match />} />
           </Route>
 
           <Route path={routes.pets} element={<MainLayout />}>

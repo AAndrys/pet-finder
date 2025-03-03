@@ -13,7 +13,7 @@ const Checkbox: FC<CheckboxProps> = ({ option, onClick, isActive = false }) => {
       <HeadlessCheckbox
         checked={isActive}
         onChange={onClick}
-        className="min-w-[16px] min-h-[16px] md:min-w-[25px] md:min-h-[25px] group block size-4 rounded border-[rgba(92,92,92,0.2)] bg-checkbox-bg data-[checked]:bg-white cursor-pointer"
+        className="min-w-[20px] min-h-[20px] md:min-w-[25px] md:min-h-[25px] group block size-4 rounded border-[rgba(92,92,92,0.2)] bg-checkbox-bg data-[checked]:bg-white cursor-pointer"
       >
         <svg
           className=" stroke-black opacity-0 group-data-[checked]:opacity-100"

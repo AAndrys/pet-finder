@@ -19,7 +19,9 @@ const Tooltip: FC<TooltipProps> = () => {
       transition={{ duration: 0.2, ease: 'easeOut' }}
       className="absolute right-7 bottom-full mb-2 w-40 p-4 bg-gray-100 rounded-lg shadow-lg"
     >
-      <p className="text-sm text-gray-800">Twoje ulubione</p>
+      <p className="text-sm text-gray-800">
+        Your favourites (sorry, in build...)
+      </p>
     </motion.div>
   );
 };

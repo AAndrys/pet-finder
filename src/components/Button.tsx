@@ -17,7 +17,7 @@ const Button: FC<ButtonProps> = ({
     <HeadlessButton
       tabIndex={0}
       className={`rounded-[100px] min-w-[116px] cursor-pointer bg-secondary py-[10px] px-[24px] text-sm text-white
-                 data-[hover]:opacity-85 data-[active]:bg-active ${className}`}
+                 data-[hover]:opacity-85 data-[active]:bg-active disabled:opacity-20 disabled:cursor-not-allowed ${className}`}
       {...props}
       onClick={onClick}
       onKeyDown={(e) => e.key === 'Enter' && onClick()}
